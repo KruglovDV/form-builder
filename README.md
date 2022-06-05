@@ -1,3 +1,6 @@
+[![CI](https://github.com/KruglovDV/rails-project-lvl1/actions/workflows/main.yml/badge.svg)](https://github.com/KruglovDV/rails-project-lvl1/actions/workflows/main.yml)
+[![hexlet-check](https://github.com/KruglovDV/rails-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/KruglovDV/rails-project-lvl1/actions/workflows/hexlet-check.yml)
+
 ## Installation
 
 ## Usage
