@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hexlet_code (0.1.0)
+    form_builder (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -33,7 +33,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
-  hexlet_code!
+  form_builder!
   minitest (~> 5.0)
   rake (~> 13.0)
   rubocop (~> 1.7)

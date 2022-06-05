@@ -2,8 +2,8 @@
 
 require "test_helper"
 
-class HexletCodeTest < Minitest::Test
+class FormBuilderTest < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::HexletCode::VERSION
+    refute_nil ::FormBuilder::VERSION
   end
 end

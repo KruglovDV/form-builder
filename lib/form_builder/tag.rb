@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HexletCode
+module FormBuilder
   module Tag
     class << self
       def build(tag_name, **attrs)
@@ -11,7 +11,7 @@ module HexletCode
           body = yield if block_given?
           build_pair_tag tag_name, attrs, body
         else
-          raise HexletCode::UnknownTagError, "Unknown tag #{tag_name}"
+          raise FormBuilder::UnknownTagError, "Unknown tag #{tag_name}"
         end
       end
 
