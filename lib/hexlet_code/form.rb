@@ -9,13 +9,13 @@ module HexletCode
       @schema = []
     end
 
-    def input(field, as: :input)
-      attrs = { name: field, value: @entity.public_send(field) }
-
-      attrs[:type] = "text" if as == :input
-      attrs = attrs.merge({ cols: 20, rows: 40 }) if as == :text
+    def input(field, **kwargs)
+      attrs = { **kwargs.except(:as), name: field, value: @entity.public_send(field) }
+      tag_type = kwargs.fetch :as, :input
+      attrs[:type] = "text" if tag_type == :input
+      attrs = attrs.merge({ cols: 20, rows: 40 }) if tag_type == :text
       @schema << { type: :label, attrs: { for: field, value: field } }
-      @schema << { type: as, attrs: attrs }
+      @schema << { type: tag_type, attrs: attrs }
     end
 
     def submit(text = "Save")
