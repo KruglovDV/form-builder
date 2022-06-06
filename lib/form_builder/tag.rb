@@ -18,7 +18,7 @@ module FormBuilder
       private
 
       SINGLE_TAGS = %w[br img input a].freeze
-      PAIR_TAGS = %w[label div span form].freeze
+      PAIR_TAGS = %w[label div span form textarea].freeze
 
       def build_single_tag(tag_name, attrs)
         "<#{tag_name}#{build_attrs(attrs)}>"

@@ -8,17 +8,14 @@ class FormBuilderTest < Minitest::Test
   end
 
   def test_form_builder
-    user = Struct.new(:name, :job, keyword_init: true).new name: "rob"
+    user = Struct.new(:name, :job, keyword_init: true).new name: "rob", job: "hexlet"
+    assert { FormBuilder.from_for(user) { |_f| } == load_fixture("empty_form.html") }
 
-    expected_empty_form = "<form action=\"#\" method=\"post\"></form>"
-    empty_form = FormBuilder.from_for user do |f|
-    end
-    puts empty_form
-    assert empty_form == expected_empty_form
-
-    expected_form_wit_url = "<form action=\"/users\" method=\"post\"></form>"
+    expected_form_wit_url = load_fixture("form.html")
     form_with_url = FormBuilder.from_for user, url: "/users" do |f|
+      f.input :name
+      f.input :job, as: :text
     end
-    assert form_with_url == expected_form_wit_url
+    assert { form_with_url == expected_form_wit_url }
   end
 end
