@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "form_builder/version"
+require_relative "hexlet_code/version"
 
-module FormBuilder
-  autoload :Tag, "form_builder/tag"
-  autoload :Form, "form_builder/form"
+module HexletCode
+  autoload :Tag, "hexlet_code/tag"
+  autoload :Form, "hexlet_code/form"
 
   class Error < StandardError; end
   class UnknownTagError < Error; end

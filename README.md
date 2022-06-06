@@ -6,7 +6,7 @@
 User = Struct.new(:name, :job, :gender, keyword_init: true)
 user = User.new name: 'rob', job: 'hexlet', gender: 'm'
 
-FormBuilder.form_for user do |f|
+HexletCode.form_for user do |f|
   f.input :name
   f.input :job, as: :text
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module FormBuilder
+module HexletCode
   module Tag
     class << self
       def build(tag_name, **attrs)

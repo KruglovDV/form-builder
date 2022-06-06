@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module FormBuilder
+module HexletCode
   class Form
     attr_reader :schema
 
