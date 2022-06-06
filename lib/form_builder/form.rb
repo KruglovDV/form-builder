@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FormBuilder
   class Form
     attr_reader :schema
