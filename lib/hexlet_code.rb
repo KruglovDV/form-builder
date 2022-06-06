@@ -10,7 +10,7 @@ module HexletCode
   class UnknownTagError < Error; end
 
   class << self
-    def from_for(entity, url: "#")
+    def form_for(entity, url: "#")
       form = Form.new(entity)
       yield form
       Tag.build("form", action: url, method: "post") do
