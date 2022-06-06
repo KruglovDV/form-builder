@@ -15,6 +15,7 @@ class FormBuilderTest < Minitest::Test
     form_with_url = FormBuilder.from_for user, url: "/users" do |f|
       f.input :name
       f.input :job, as: :text
+      f.submit
     end
     assert { form_with_url == expected_form_wit_url }
   end

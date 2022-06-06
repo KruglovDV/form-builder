@@ -24,9 +24,17 @@ module FormBuilder
       form.schema.map do |field|
         case field[:type]
         when :input
-          Tag.build("input", name: field[:name], type: "text", value: field[:value])
+          Tag.build("input", **field[:attrs])
         when :text
-          Tag.build("textarea", cols: 20, rows: 40, name: field[:name]) { field[:value] }
+          value = field[:attrs][:value]
+          attrs = field[:attrs].except :value
+          Tag.build("textarea", **attrs) { value }
+        when :label
+          value = field[:attrs][:value].capitalize
+          attrs = field[:attrs].except :value
+          Tag.build("label", **attrs) { value }
+        when :submit
+          Tag.build("input", **field[:attrs])
         else
           raise UnknownTagError, "Unknown tag #{field[:type]}"
         end
