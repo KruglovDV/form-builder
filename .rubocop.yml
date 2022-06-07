@@ -1,25 +1,11 @@
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 3.0.2
-
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
-
-Style/StringLiteralsInInterpolation:
-  Enabled: true
-  EnforcedStyle: double_quotes
-
-Layout/LineLength:
-  Max: 120
+  SuggestExtensions: false
 
 Style/Documentation:
   Enabled: false
-
-Naming/MethodParameterName:
-  MinNameLength: 2
-
 Metrics/MethodLength:
-  Max: 20
-
-Metrics/AbcSize:
+  Enabled: false
+Style/AsciiComments:
   Enabled: false

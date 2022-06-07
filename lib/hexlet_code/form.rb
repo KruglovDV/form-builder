@@ -16,14 +16,14 @@ module HexletCode
       @schema << { type: tag_type, attrs: attrs }
     end
 
-    def submit(text = "Save")
-      @schema << { type: :submit, attrs: { name: "commit", type: "submit", value: text } }
+    def submit(text = 'Save')
+      @schema << { type: :submit, attrs: { name: 'commit', type: 'submit', value: text } }
     end
 
     private
 
     DEFAULT_ATTRS = {
-      input: { type: "text" },
+      input: { type: 'text' },
       text: { cols: 20, rows: 40 }
     }.freeze
 
