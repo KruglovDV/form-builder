@@ -14,7 +14,7 @@ module HexletCode
     end
 
     def submit(name = '', **attrs)
-      add_child({ type: :Submit, attrs: { **attrs, name: name } })
+      add_child({ type: :Submit, attrs: { name: name, **attrs } })
     end
 
     private
