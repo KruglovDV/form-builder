@@ -13,8 +13,8 @@ module HexletCode
       add_child({ type: :Input, attrs: { **attrs, name: name, value: get_value(name) } })
     end
 
-    def submit(name = '', **attrs)
-      add_child({ type: :Submit, attrs: { name: name, **attrs } })
+    def submit(**attrs)
+      add_child({ type: :Submit, attrs: { **attrs } })
     end
 
     private

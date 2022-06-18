@@ -5,13 +5,13 @@ require_relative 'hexlet_code/version'
 module HexletCode
   autoload :Tag, 'hexlet_code/tag'
   autoload :FormSchema, 'hexlet_code/form_schema'
-  autoload :Form, 'hexlet_code/form_render/form'
+  autoload :FormRender, 'hexlet_code/form_render/form'
 
   class << self
     def form_for(entity, **form_attrs)
       form = FormSchema.new(entity, form_attrs)
       yield form if block_given?
-      Form.render(form.schema)
+      FormRender::Form.render(form.schema)
     end
   end
 end
