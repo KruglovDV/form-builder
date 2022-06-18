@@ -9,3 +9,7 @@ require 'minitest/power_assert'
 def load_fixture(filename)
   File.read(File.dirname(__FILE__) + "/fixtures/#{filename}")
 end
+
+def create_user
+  Struct.new(:name, :job, keyword_init: true).new name: 'rob', job: 'hexlet'
+end

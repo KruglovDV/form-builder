@@ -9,12 +9,10 @@ module HexletCode
 
       def build(tag_name, **attrs)
         open_tag = "<#{tag_name}#{build_attrs(attrs)}>"
-        if SINGLE_TAGS.include? tag_name
-          open_tag
-        else
-          body = yield if block_given?
-          "#{open_tag}#{body}</#{tag_name}>"
-        end
+        return open_tag if SINGLE_TAGS.include? tag_name
+
+        body = yield if block_given?
+        "#{open_tag}#{body}</#{tag_name}>"
       end
 
       private
