@@ -5,7 +5,8 @@ module HexletCode
     class Submit
       class << self
         def render(attrs)
-          Tag.build('input', **{ name: 'commit', type: 'submit', value: 'Save', **attrs })
+          value = attrs.fetch(:name, 'Save')
+          Tag.build('input', **{ name: 'commit', type: 'submit', value: value, **attrs })
         end
       end
     end
