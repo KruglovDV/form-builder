@@ -4,6 +4,8 @@ module HexletCode
   module FormRender
     autoload :Input, 'hexlet_code/form_render/input'
     autoload :Submit, 'hexlet_code/form_render/submit'
+    autoload :Text, 'hexlet_code/form_render/text'
+    autoload :Label, 'hexlet_code/form_render/label'
 
     class Form
       class << self

@@ -10,12 +10,12 @@ module HexletCode
     end
 
     def input(name, **attrs)
-      add_child({ type: :Input, attrs: { **attrs, name: name, value: get_value(name) } })
+      type = attrs.fetch(:as, :input).capitalize
+      add_child({ type: type, attrs: { **attrs, name: name, value: get_value(name) } })
     end
 
     def submit(name = '', **attrs)
-      prepared_attrs = { name: name, **attrs }
-      prepared_attrs = prepared_attrs.except(:name) if name.empty?
+      prepared_attrs = { **(name.empty? ? {} : { name: name }), **attrs }
       add_child({ type: :Submit, attrs: prepared_attrs })
     end
 
