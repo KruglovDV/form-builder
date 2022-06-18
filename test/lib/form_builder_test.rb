@@ -14,12 +14,12 @@ class HexletCodeTest < Minitest::Test
 
   def test_form_builder_wit_fields
     user = create_user
-    expected_form_wit_url = load_fixture('form.html')
-    form_with_url = HexletCode.form_for user, url: '/users' do |f|
+    expected_form = load_fixture('form.html')
+    form = HexletCode.form_for user, url: '/users' do |f|
       f.input :name
       f.input :job, as: :text
       f.submit
     end
-    assert { form_with_url == expected_form_wit_url }
+    assert { form == expected_form }
   end
 end
