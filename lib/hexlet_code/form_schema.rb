@@ -14,8 +14,8 @@ module HexletCode
       add_child({ type: type, attrs: { **attrs, name: name, value: get_value(name) } })
     end
 
-    def submit(name = '', **attrs)
-      prepared_attrs = { **(name.empty? ? {} : { name: name }), **attrs }
+    def submit(value = '', **attrs)
+      prepared_attrs = { **(value.empty? ? {} : { value: value }), **attrs }
       add_child({ type: :Submit, attrs: prepared_attrs })
     end
 
