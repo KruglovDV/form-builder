@@ -3,6 +3,10 @@
 require 'test_helper'
 
 class HexletCodeTest < Minitest::Test
+  def test_that_it_has_a_version_number
+    refute_nil ::HexletCode::VERSION
+  end
+
   def test_form_builder_with_empty_body
     user = create_user
     assert { HexletCode.form_for(user) == load_fixture('empty_form.html') }
