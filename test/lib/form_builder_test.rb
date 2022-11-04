@@ -4,7 +4,7 @@ require 'test_helper'
 
 class HexletCodeTest < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::HexletCode::VERSION
+    assert !::HexletCode::VERSION.nil?
   end
 
   def test_form_builder_with_empty_body
